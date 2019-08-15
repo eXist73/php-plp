@@ -23,7 +23,7 @@ $data = [];
 $crawler->filter('ul.products-grid div.product-info')->each(function ($node) use (&$data) {
 
     // Get product name
-    $temp['name'] = $node->filter('div.product-name a')->first()->text();
+    $temp['name'] = trim($node->filter('div.product-name a')->first()->text());
 
     // Get product price
     $temp['price'] = $node->filter('div.price-box span.price')->first()->text();
